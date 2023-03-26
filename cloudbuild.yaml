@@ -3,9 +3,5 @@ steps:
   args: [ 'build',
   '--build-arg', 'PROJECT_ID=$PROJECT_ID',
   '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/chatbot-bagelbot-client-streamlit/image:latest', '.' ]
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute','instances','add-metadata','chatbot-bagelbot-client-streamlit','--zone','northamerica-northeast1-a','--metadata-from-file=startup-script=/workspace/startup-vm.bash']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['compute','instances', 'reset', 'chatbot-bagelbot-client-streamlit', '--zone', 'northamerica-northeast1-a']
 images:
 - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/chatbot-bagelbot-client-streamlit/image:latest'
