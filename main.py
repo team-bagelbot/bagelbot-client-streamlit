@@ -8,7 +8,7 @@ import json
 PROJECT_ID = os.environ['PROJECT_ID']
 ENDPOINT_RESPONSES = os.environ['ENDPOINT_RESPONSES']
 if 'page_title' not in os.environ:
-    os.environ['page_title'] = 'Discovery Mode Info Bot'
+    os.environ['page_title'] = 'Bagel Bot'
 
 from app_logger import AppLogger
 logger_name = f'{PROJECT_ID}-client-streamlit-logger'
@@ -34,7 +34,7 @@ def main():
         st.session_state['convo_thread'] = []
 
     st.title(os.environ['page_title'])
-    text_input = st.text_input('Ask me a question about Discovery Mode!')
+    text_input = st.text_input('Ask me a question about bagels!')
 
     if st.button('Submit'):
         # build url
