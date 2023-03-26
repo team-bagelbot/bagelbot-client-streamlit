@@ -11,7 +11,7 @@ if 'page_title' not in os.environ:
     os.environ['page_title'] = 'Discovery Mode Info Bot'
 
 from app_logger import AppLogger
-logger_name = f'{PROJECT_ID}-service-logger'
+logger_name = f'{PROJECT_ID}-client-streamlit-logger'
 logger = AppLogger(logger_name)
 logger.log_text(f'Initialized logger: {logger_name} PROJECT_ID: {PROJECT_ID}')
 
