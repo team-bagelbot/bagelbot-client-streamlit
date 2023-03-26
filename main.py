@@ -10,6 +10,11 @@ ENDPOINT_RESPONSES = os.environ['ENDPOINT_RESPONSES']
 if 'page_title' not in os.environ:
     os.environ['page_title'] = 'Discovery Mode Info Bot'
 
+from app_logger import AppLogger
+logger_name = f'{PROJECT_ID}-service-logger'
+logger = AppLogger(logger_name)
+logger.log_text(f'Initialized logger: {logger_name} PROJECT_ID: {PROJECT_ID}')
+
 def get_session_id() -> str:
     return hash(str(time.time()).replace('.', ''))
 
@@ -53,4 +58,5 @@ def main():
             st.write(qa)
     
 if __name__ == "__main__":
+    logger.log_text('Starting streamlit app')
     main()
